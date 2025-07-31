@@ -1,8 +1,8 @@
 import os
 import numpy as np
-from pywapor.general import compositer
-from pywapor.general.processing_functions import create_dummy_ds
-from pywapor.general.logger import adjust_logger
+from pywapor_folder.general import compositer
+from pywapor_folder.general.processing_functions import create_dummy_ds
+from pywapor_folder.general.logger import adjust_logger
 import datetime
 
 def test_1(tmp_path):

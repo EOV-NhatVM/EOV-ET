@@ -1,10 +1,10 @@
-import pywapor
+import pywapor_folder
 import inspect
 import datetime
 import warnings
 import rasterio
 import numpy as np
-from pywapor.general.logger import adjust_logger, log
+from pywapor_folder.general.logger import adjust_logger, log
 import pytest
 
 def get_source_details(mod):
@@ -87,20 +87,20 @@ def strictly_decreasing(L):
     return all(x>y for x, y in zip(L, L[1:]))
 
 sources = {
-    'GEOS5':        [pywapor.collect.product.GEOS5,     [datetime.date(2022, 3, 1), datetime.date(2022, 3, 3)]], # opendap.download_xarray
-    'STATICS':      [pywapor.collect.product.STATICS,   None], # cog.download
-    'MODIS':        [pywapor.collect.product.MODIS,     [datetime.date(2019, 3, 1), datetime.date(2019, 4, 1)]], # opendap.download
-    'MERRA2':       [pywapor.collect.product.MERRA2,    [datetime.date(2022, 3, 1), datetime.date(2022, 3, 3)]], # opendap.download
-    'GLOBCOVER':    [pywapor.collect.product.GLOBCOVER, None], # cog.download
-    'CHIRPS':       [pywapor.collect.product.CHIRPS,    [datetime.date(2022, 3, 1), datetime.date(2022, 3, 3)]], # opendap.download
-    'SRTM':         [pywapor.collect.product.SRTM,      None], # opendap.download
-    'ERA5':         [pywapor.collect.product.ERA5,      [datetime.date(2022, 3, 1), datetime.date(2022, 3, 3)]], # cds.download
-    'SENTINEL2':    [pywapor.collect.product.SENTINEL2, [datetime.date(2023, 3, 1), datetime.date(2023, 3, 3)]],    
-    'SENTINEL3':    [pywapor.collect.product.SENTINEL3, [datetime.date(2023, 3, 1), datetime.date(2023, 3, 3)]],
-    'VIIRSL1':      [pywapor.collect.product.VIIRSL1,   [datetime.date(2022, 3, 1), datetime.date(2022, 3, 2)]],
-    'COPERNICUS':   [pywapor.collect.product.COPERNICUS, None], # cog.download
-    'TERRA':        [pywapor.collect.product.TERRA,     [datetime.date(2020, 7, 2), datetime.date(2020, 7, 9)]],
-    'LANDSAT': [pywapor.collect.product.LANDSAT, [datetime.date(2022, 3, 1), datetime.date(2022, 3, 12)]]
+    'GEOS5':        [pywapor_folder.collect.product.GEOS5,     [datetime.date(2022, 3, 1), datetime.date(2022, 3, 3)]], # opendap.download_xarray
+    'STATICS':      [pywapor_folder.collect.product.STATICS,   None], # cog.download
+    'MODIS':        [pywapor_folder.collect.product.MODIS,     [datetime.date(2019, 3, 1), datetime.date(2019, 4, 1)]], # opendap.download
+    'MERRA2':       [pywapor_folder.collect.product.MERRA2,    [datetime.date(2022, 3, 1), datetime.date(2022, 3, 3)]], # opendap.download
+    'GLOBCOVER':    [pywapor_folder.collect.product.GLOBCOVER, None], # cog.download
+    'CHIRPS':       [pywapor_folder.collect.product.CHIRPS,    [datetime.date(2022, 3, 1), datetime.date(2022, 3, 3)]], # opendap.download
+    'SRTM':         [pywapor_folder.collect.product.SRTM,      None], # opendap.download
+    'ERA5':         [pywapor_folder.collect.product.ERA5,      [datetime.date(2022, 3, 1), datetime.date(2022, 3, 3)]], # cds.download
+    'SENTINEL2':    [pywapor_folder.collect.product.SENTINEL2, [datetime.date(2023, 3, 1), datetime.date(2023, 3, 3)]],    
+    'SENTINEL3':    [pywapor_folder.collect.product.SENTINEL3, [datetime.date(2023, 3, 1), datetime.date(2023, 3, 3)]],
+    'VIIRSL1':      [pywapor_folder.collect.product.VIIRSL1,   [datetime.date(2022, 3, 1), datetime.date(2022, 3, 2)]],
+    'COPERNICUS':   [pywapor_folder.collect.product.COPERNICUS, None], # cog.download
+    'TERRA':        [pywapor_folder.collect.product.TERRA,     [datetime.date(2020, 7, 2), datetime.date(2020, 7, 9)]],
+    'LANDSAT': [pywapor_folder.collect.product.LANDSAT, [datetime.date(2022, 3, 1), datetime.date(2022, 3, 12)]]
 }
 
 @pytest.mark.parametrize("product_name", list(sources.keys()))

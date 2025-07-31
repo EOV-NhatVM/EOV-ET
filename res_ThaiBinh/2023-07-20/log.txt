@@ -1,0 +1,121 @@
+2025-07-25 14:31:22,973      INFO: > ET_LOOK
+2025-07-25 14:31:22,973      INFO:     --> Running `et_look` (v3).
+2025-07-25 14:31:23,106      INFO:     --> Setting `rs_min` to `100`.
+2025-07-25 14:31:23,107      INFO:     --> Setting `land_mask` to `1`.
+2025-07-25 14:31:23,108      INFO:     --> Setting `z_obst_max` to `3`.
+2025-07-25 14:31:23,109      INFO:     --> Calculating `declination`.
+2025-07-25 14:31:23,113      INFO:     --> Calculating `inverse_earth_sun_distance`.
+2025-07-25 14:31:23,119      INFO:     --> Calculating `vegetation_cover`.
+2025-07-25 14:31:23,126      INFO:     --> Calculating `leaf_area_index`.
+2025-07-25 14:31:23,134      INFO:     --> Calculating `effective_leaf_area_index`.
+2025-07-25 14:31:23,138      INFO:     --> Calculating `soil_fraction`.
+2025-07-25 14:31:23,141      INFO:     --> Calculating `latitude_rad`.
+2025-07-25 14:31:23,143      INFO:     --> Calculating `sunset_hour_angle`.
+2025-07-25 14:31:23,149      INFO:     --> Calculating `daily_solar_radiation_toa_flat`.
+2025-07-25 14:31:23,161      INFO:     --> Calculating `transmissivity`.
+2025-07-25 14:31:23,165      INFO:     --> Calculating `seasonal_correction`.
+2025-07-25 14:31:23,174      INFO:     --> Calculating `daily_solar_radiation_toa`.
+2025-07-25 14:31:23,247      INFO:     --> Calculating `cosine_solar_zenith_angle`.
+2025-07-25 14:31:23,302      INFO:     --> Calculating `inst_solar_radiation_toa`.
+2025-07-25 14:31:23,307      INFO:     --> Calculating `transmissivity`.
+2025-07-25 14:31:23,311      INFO:     --> Calculating `diffusion_index`.
+2025-07-25 14:31:23,320      INFO:     --> Calculating `daily_total_solar_radiation`.
+2025-07-25 14:31:23,328      INFO:     --> Calculating `stress_radiation`.
+2025-07-25 14:31:23,333      INFO:     --> Calculating `air_pressure_kpa2mbar`.
+2025-07-25 14:31:23,335      INFO:     --> Calculating `air_pressure_daily`.
+2025-07-25 14:31:23,336      INFO:     --> Calculating `air_pressure`.
+2025-07-25 14:31:23,341      INFO:     --> Calculating `vapour_pressure_from_dewpoint_daily`.
+2025-07-25 14:31:23,341      INFO:     --> Calculating `saturated_vapour_pressure`.
+2025-07-25 14:31:23,346      INFO:     --> Calculating `saturated_vapour_pressure_minimum`.
+2025-07-25 14:31:23,347      INFO:     --> Calculating `saturated_vapour_pressure`.
+2025-07-25 14:31:23,352      INFO:     --> Calculating `saturated_vapour_pressure_maximum`.
+2025-07-25 14:31:23,353      INFO:     --> Calculating `saturated_vapour_pressure`.
+2025-07-25 14:31:23,357      INFO:     --> Calculating `saturated_vapour_pressure_average`.
+2025-07-25 14:31:23,360      INFO:     --> Calculating `vapour_pressure_deficit_daily`.
+2025-07-25 14:31:23,360      INFO:     --> Calculating `vapour_pressure_deficit`.
+2025-07-25 14:31:23,364      INFO:     --> Calculating `stress_vpd`.
+2025-07-25 14:31:23,369      INFO:     --> Calculating `stress_temperature`.
+2025-07-25 14:31:23,374      INFO:     --> Calculating `atmospheric_canopy_resistance`.
+2025-07-25 14:31:23,384      INFO:     --> Calculating `air_temperature_kelvin_daily`.
+2025-07-25 14:31:23,385      INFO:     --> Calculating `air_temperature_kelvin`.
+2025-07-25 14:31:23,387      INFO:     --> Calculating `longwave_radiation_fao`.
+2025-07-25 14:31:23,396      INFO:     --> Calculating `interception_mm`.
+2025-07-25 14:31:23,408      INFO:     --> Calculating `latent_heat_daily`.
+2025-07-25 14:31:23,408      INFO:     --> Calculating `latent_heat`.
+2025-07-25 14:31:23,411      INFO:     --> Calculating `interception_wm2`.
+2025-07-25 14:31:23,414      INFO:     --> Calculating `net_radiation`.
+2025-07-25 14:31:23,420      INFO:     --> Calculating `net_radiation_canopy`.
+2025-07-25 14:31:23,424      INFO:     --> Calculating `stress_moisture`.
+2025-07-25 14:31:23,429      INFO:     --> Calculating `canopy_resistance`.
+2025-07-25 14:31:23,435      INFO:     --> Setting `z_oro` to `0.001`.
+2025-07-25 14:31:23,436      INFO:     --> Calculating `obstacle_height`.
+2025-07-25 14:31:23,446      INFO:     --> Calculating `roughness_length`.
+2025-07-25 14:31:23,469      INFO:     --> Calculating `wind_speed`.
+2025-07-25 14:31:23,473      INFO:     --> Calculating `initial_canopy_aerodynamic_resistance`.
+2025-07-25 14:31:23,479      INFO:     --> Calculating `wind_speed_blending_height_daily`.
+2025-07-25 14:31:23,483      INFO:     --> Calculating `wind_speed_blending_height`.
+2025-07-25 14:31:23,489      INFO:     --> Calculating `dry_air_density_daily`.
+2025-07-25 14:31:23,490      INFO:     --> Calculating `dry_air_density`.
+2025-07-25 14:31:23,493      INFO:     --> Calculating `moist_air_density_daily`.
+2025-07-25 14:31:23,494      INFO:     --> Calculating `moist_air_density`.
+2025-07-25 14:31:23,497      INFO:     --> Calculating `air_density_daily`.
+2025-07-25 14:31:23,497      INFO:     --> Calculating `air_density`.
+2025-07-25 14:31:23,500      INFO:     --> Calculating `psychrometric_constant_daily`.
+2025-07-25 14:31:23,500      INFO:     --> Calculating `psychrometric_constant`.
+2025-07-25 14:31:23,504      INFO:     --> Calculating `slope_saturated_vapour_pressure_daily`.
+2025-07-25 14:31:23,504      INFO:     --> Calculating `slope_saturated_vapour_pressure`.
+2025-07-25 14:31:23,505      INFO:     --> Calculating `saturated_vapour_pressure`.
+2025-07-25 14:31:23,512      INFO:     --> Calculating `initial_daily_transpiration`.
+2025-07-25 14:31:23,524      INFO:     --> Calculating `initial_sensible_heat_flux_canopy_daily`.
+2025-07-25 14:31:23,527      INFO:     --> Calculating `displacement_height`.
+2025-07-25 14:31:23,542      INFO:     --> Calculating `initial_friction_velocity_daily`.
+2025-07-25 14:31:23,549      INFO:     --> Calculating `transpiration`.
+2025-07-25 14:31:23,550      INFO:         --> Starting iteration 1.
+2025-07-25 14:31:23,550      INFO:         --> Calculating `ra_canopy`.
+2025-07-25 14:31:23,550      INFO:             --> Starting iteration 1.
+2025-07-25 14:31:23,579      INFO:             --> Iteration 1 finished.
+2025-07-25 14:31:23,643      INFO:             --> Starting iteration 2.
+2025-07-25 14:31:23,674      INFO:             --> Iteration 2 finished.
+2025-07-25 14:31:23,742      INFO:             --> Starting iteration 3.
+2025-07-25 14:31:23,775      INFO:             --> Iteration 3 finished.
+2025-07-25 14:31:23,805      INFO:         --> Iteration 1 finished.
+2025-07-25 14:31:23,949      INFO:         --> Starting iteration 2.
+2025-07-25 14:31:23,950      INFO:         --> Calculating `ra_canopy`.
+2025-07-25 14:31:23,950      INFO:             --> Starting iteration 1.
+2025-07-25 14:31:23,984      INFO:             --> Iteration 1 finished.
+2025-07-25 14:31:24,064      INFO:             --> Starting iteration 2.
+2025-07-25 14:31:24,097      INFO:             --> Iteration 2 finished.
+2025-07-25 14:31:24,173      INFO:             --> Starting iteration 3.
+2025-07-25 14:31:24,205      INFO:             --> Iteration 3 finished.
+2025-07-25 14:31:24,238      INFO:         --> Iteration 2 finished.
+2025-07-25 14:31:24,336      INFO:         --> Starting iteration 3.
+2025-07-25 14:31:24,337      INFO:         --> Calculating `ra_canopy`.
+2025-07-25 14:31:24,337      INFO:             --> Starting iteration 1.
+2025-07-25 14:31:24,368      INFO:             --> Iteration 1 finished.
+2025-07-25 14:31:24,451      INFO:             --> Starting iteration 2.
+2025-07-25 14:31:24,482      INFO:             --> Iteration 2 finished.
+2025-07-25 14:31:24,571      INFO:             --> Starting iteration 3.
+2025-07-25 14:31:24,602      INFO:             --> Iteration 3 finished.
+2025-07-25 14:31:24,634      INFO:         --> Iteration 3 finished.
+2025-07-25 14:31:24,637      INFO:     --> Calculating `transpiration_mm`.
+2025-07-25 14:31:24,641      INFO:     --> Calculating `net_radiation_soil`.
+2025-07-25 14:31:24,644      INFO:     --> Calculating `soil_resistance`.
+2025-07-25 14:31:24,648      INFO:     --> Calculating `initial_soil_aerodynamic_resistance`.
+2025-07-25 14:31:24,651      INFO:     --> Calculating `initial_friction_velocity_soil_daily`.
+2025-07-25 14:31:24,659      INFO:     --> Calculating `soil_thermal_conductivity`.
+2025-07-25 14:31:24,662      INFO:     --> Calculating `volumetric_heat_capacity`.
+2025-07-25 14:31:24,665      INFO:     --> Calculating `damping_depth`.
+2025-07-25 14:31:24,671      INFO:     --> Calculating `bare_soil_heat_flux`.
+2025-07-25 14:31:24,682      INFO:     --> Calculating `soil_heat_flux`.
+2025-07-25 14:31:24,697      INFO:     --> Calculating `initial_daily_evaporation`.
+2025-07-25 14:31:24,709      INFO:     --> Calculating `initial_sensible_heat_flux_soil_daily`.
+2025-07-25 14:31:24,713      INFO:     --> Calculating `evaporation`.
+2025-07-25 14:31:25,689      INFO:     --> Calculating `evaporation_mm`.
+2025-07-25 14:31:25,693      INFO:     --> Calculating `eti_actual_mm`.
+2025-07-25 14:31:25,697      INFO:     --> Calculating `net_radiation_grass`.
+2025-07-25 14:31:25,700      INFO:     --> Calculating `et_reference`.
+2025-07-25 14:31:25,711      INFO:     --> Calculating `et_reference_mm`.
+2025-07-25 14:31:25,735      INFO:     --> Saving output to `res_2023-07-20`.
+2025-07-25 14:31:28,237      INFO:         > peak-memory-usage: 4.3MB, execution-time: 0:00:02.500652.
+2025-07-25 14:31:28,238      INFO:         > chunksize|dimsize: [y: 43|43, x: 44|44, time_bins: 1|1], crs: EPSG:4326
+2025-07-25 14:31:28,238      INFO: < ET_LOOK (0:00:05.265611)

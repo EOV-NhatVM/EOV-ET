@@ -1,6 +1,6 @@
-import pywapor
+import pywapor_folder
 import datetime
-from pywapor.general.logger import adjust_logger
+from pywapor_folder.general.logger import adjust_logger
 import numpy as np
 import os
 
@@ -33,7 +33,7 @@ def test_small_se_root(tmp_path):
     lonlim = [30.7, 31.0]
     timelim = [datetime.date(2023, 2, 1), datetime.date(2023, 2, 11)]
     bin_length = "DEKAD"
-    ds = pywapor.pre_se_root.main(folder, latlim, lonlim, timelim, sources, bin_length = bin_length)
+    ds = pywapor_folder.pre_se_root.main(folder, latlim, lonlim, timelim, sources, bin_length = bin_length)
     assert ds.rio.crs.to_epsg() == 4326
     assert "bt" not in ds.data_vars
     assert "lst" in ds.data_vars
@@ -57,7 +57,7 @@ def test_se_root_level_2_v3(tmp_path):
     bin_length = 1
     enhancers = []
     buffer_timelim = True
-    input_data = pywapor.pre_se_root.main(folder, latlim, lonlim, timelim, 
+    input_data = pywapor_folder.pre_se_root.main(folder, latlim, lonlim, timelim, 
                                             sources, bin_length = bin_length, 
                                             enhancers = enhancers, buffer_timelim = buffer_timelim)
     assert input_data.rio.crs.to_epsg() == 4326
@@ -74,7 +74,7 @@ def test_se_root_level_2_v3(tmp_path):
     assert 0 < input_data.wv_i.mean().values < 100
     assert 240 < input_data.lst.mean().values < 320
 
-    ds = pywapor.se_root.main(input_data, se_root_version = "v3")
+    ds = pywapor_folder.se_root.main(input_data, se_root_version = "v3")
     assert ds.rio.crs.to_epsg() == 4326
     assert "se_root" in ds.data_vars
     assert ds.se_root.min().values >= 0.
@@ -95,7 +95,7 @@ def test_se_root_level_3_v3(tmp_path):
     bin_length = 1
     enhancers = []
     buffer_timelim = True
-    input_data = pywapor.pre_se_root.main(folder, latlim, lonlim, timelim, 
+    input_data = pywapor_folder.pre_se_root.main(folder, latlim, lonlim, timelim, 
                                             sources, bin_length = bin_length, 
                                             enhancers = enhancers, buffer_timelim = buffer_timelim)
     assert input_data.rio.crs.to_epsg() == 4326
@@ -112,7 +112,7 @@ def test_se_root_level_3_v3(tmp_path):
     assert 0 < input_data.wv_i.mean().values < 100
     assert 240 < input_data.lst.mean().values < 320
 
-    ds = pywapor.se_root.main(input_data, se_root_version = "v3")
+    ds = pywapor_folder.se_root.main(input_data, se_root_version = "v3")
     assert ds.rio.crs.to_epsg() == 4326
     assert "se_root" in ds.data_vars
     assert ds.se_root.min().values >= 0.
@@ -129,7 +129,7 @@ def test_se_root_level_1_v2(tmp_path):
     sources = "level_1"
     enhancers = []
     bin_length = "DEKAD"
-    input_data = pywapor.pre_se_root.main(folder, latlim, lonlim, timelim, sources, 
+    input_data = pywapor_folder.pre_se_root.main(folder, latlim, lonlim, timelim, sources, 
                                           bin_length = bin_length, enhancers = enhancers)
     assert input_data.rio.crs.to_epsg() == 4326
     assert np.all([x in input_data.data_vars for x in ["ndvi", "lst"]])
@@ -143,7 +143,7 @@ def test_se_root_level_1_v2(tmp_path):
     assert 0 < input_data.wv_i.mean().values < 100
     assert 240 < input_data.lst.mean().values < 320
     
-    ds = pywapor.se_root.main(input_data, se_root_version = "v2")
+    ds = pywapor_folder.se_root.main(input_data, se_root_version = "v2")
     assert ds.rio.crs.to_epsg() == 4326
     assert "se_root" in ds.data_vars
     assert ds.se_root.min().values >= 0.
@@ -158,7 +158,7 @@ def test_se_root_level_2_v2(tmp_path):
     latlim = [29.4, 29.6]
     lonlim = [30.7, 30.9]
     sources = "level_2"
-    input_data = pywapor.pre_se_root.main(folder, latlim, lonlim, timelim, 
+    input_data = pywapor_folder.pre_se_root.main(folder, latlim, lonlim, timelim, 
                                             sources, bin_length = 3)
     assert input_data.rio.crs.to_epsg() == 4326
     assert np.all([x in input_data.data_vars for x in ["ndvi", "lst"]])
@@ -172,7 +172,7 @@ def test_se_root_level_2_v2(tmp_path):
     assert 0 < input_data.wv_i.mean().values < 100
     assert 240 < input_data.lst.mean().values < 320
 
-    ds = pywapor.se_root.main(input_data, se_root_version = "v2")
+    ds = pywapor_folder.se_root.main(input_data, se_root_version = "v2")
     assert ds.rio.crs.to_epsg() == 4326
     assert "se_root" in ds.data_vars
     assert ds.se_root.min().values >= 0. 
@@ -187,7 +187,7 @@ def test_se_root_level_3_v2(tmp_path):
     latlim = [29.4, 29.6]
     lonlim = [30.7, 30.9]
     sources = "level_3"
-    input_data = pywapor.pre_se_root.main(folder, latlim, lonlim, timelim, 
+    input_data = pywapor_folder.pre_se_root.main(folder, latlim, lonlim, timelim, 
                                             sources, bin_length = 3)
     assert input_data.rio.crs.to_epsg() == 4326
     assert np.all([x in input_data.data_vars for x in ["ndvi", "lst"]])
@@ -201,7 +201,7 @@ def test_se_root_level_3_v2(tmp_path):
     assert 0 < input_data.wv_i.mean().values < 100
     assert 240 < input_data.lst.mean().values < 320
 
-    ds = pywapor.se_root.main(input_data, se_root_version = "v2")
+    ds = pywapor_folder.se_root.main(input_data, se_root_version = "v2")
     assert ds.rio.crs.to_epsg() == 4326
     assert "se_root" in ds.data_vars
     assert ds.se_root.min().values >= 0.

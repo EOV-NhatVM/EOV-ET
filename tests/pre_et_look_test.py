@@ -1,6 +1,6 @@
-import pywapor
+import pywapor_folder
 import datetime
-from pywapor.general.logger import adjust_logger
+from pywapor_folder.general.logger import adjust_logger
 import numpy as np
 import xarray as xr
 
@@ -37,7 +37,7 @@ def test_small_et_look(tmp_path):
     today = datetime.datetime.now().date()
     timelim = [today - datetime.timedelta(21), today - datetime.timedelta(21)]
     bin_length = 1
-    ds = pywapor.pre_et_look.main(folder, latlim, lonlim, timelim, sources, bin_length = bin_length)
+    ds = pywapor_folder.pre_et_look.main(folder, latlim, lonlim, timelim, sources, bin_length = bin_length)
     assert ds.rio.crs.to_epsg() == 4326
     assert "ndvi" in ds.data_vars
     assert "r0" in ds.data_vars
@@ -57,7 +57,7 @@ def test_et_look_level_2_v3(tmp_path):
     lonlim = [30.7, 30.9]
     sources = "level_2_v3"
     bin_length = 1
-    input_data = pywapor.pre_et_look.main(folder, latlim, lonlim, timelim, 
+    input_data = pywapor_folder.pre_et_look.main(folder, latlim, lonlim, timelim, 
                                             sources, bin_length = bin_length)
     assert input_data.rio.crs.to_epsg() == 4326
     assert np.all([x in input_data.data_vars for x in ["ndvi", "r0", "se_root"]])
@@ -68,7 +68,7 @@ def test_et_look_level_2_v3(tmp_path):
     assert input_data.se_root.min().values >= 0.
     assert input_data.se_root.max().values <= 1.
 
-    ds = pywapor.et_look.main(input_data, et_look_version = "v3")
+    ds = pywapor_folder.et_look.main(input_data, et_look_version = "v3")
     assert ds.rio.crs.to_epsg() == 4326
     assert "aeti_24_mm" in ds.data_vars
     assert ds.aeti_24_mm.min().values >= 0.
@@ -87,7 +87,7 @@ def test_et_look_level_3_v3(tmp_path):
     lonlim = [30.7, 30.9]
     sources = "level_3_v3"
     bin_length = 2
-    input_data = pywapor.pre_et_look.main(folder, latlim, lonlim, timelim, 
+    input_data = pywapor_folder.pre_et_look.main(folder, latlim, lonlim, timelim, 
                                             sources, bin_length = bin_length)
     assert input_data.rio.crs.to_epsg() == 4326
     assert np.all([x in input_data.data_vars for x in ["ndvi", "r0", "se_root"]])
@@ -98,7 +98,7 @@ def test_et_look_level_3_v3(tmp_path):
     assert input_data.se_root.min().values >= 0.
     assert input_data.se_root.max().values <= 1.
 
-    ds = pywapor.et_look.main(input_data, et_look_version = "v3")
+    ds = pywapor_folder.et_look.main(input_data, et_look_version = "v3")
     assert ds.rio.crs.to_epsg() == 4326
     assert "aeti_24_mm" in ds.data_vars
     assert ds.aeti_24_mm.min().values >= 0.
@@ -113,7 +113,7 @@ def test_et_look_level_1_v2(tmp_path):
     latlim = [29.4, 29.6]
     lonlim = [30.7, 30.9]
     sources = "level_1"
-    input_data = pywapor.pre_et_look.main(folder, latlim, lonlim, timelim, 
+    input_data = pywapor_folder.pre_et_look.main(folder, latlim, lonlim, timelim, 
                                             sources)
     assert input_data.rio.crs.to_epsg() == 4326
     assert np.all([x in input_data.data_vars for x in ["ndvi", "r0", "se_root"]])
@@ -124,7 +124,7 @@ def test_et_look_level_1_v2(tmp_path):
     assert input_data.se_root.min().values >= 0.
     assert input_data.se_root.max().values <= 1.
 
-    ds = pywapor.et_look.main(input_data, et_look_version = "v2")
+    ds = pywapor_folder.et_look.main(input_data, et_look_version = "v2")
     assert ds.rio.crs.to_epsg() == 4326
     assert "aeti_24_mm" in ds.data_vars
     assert ds.aeti_24_mm.min().values >= 0.
@@ -140,7 +140,7 @@ def test_et_look_level_2_v2(tmp_path):
     lonlim = [30.7, 30.9]
     sources = "level_2"
     bin_length = "DEKAD"
-    input_data = pywapor.pre_et_look.main(folder, latlim, lonlim, timelim, sources, bin_length = bin_length)
+    input_data = pywapor_folder.pre_et_look.main(folder, latlim, lonlim, timelim, sources, bin_length = bin_length)
     assert input_data.rio.crs.to_epsg() == 4326
     assert np.all([x in input_data.data_vars for x in ["ndvi", "r0", "se_root"]])
     assert input_data.ndvi.min().values >= -1.
@@ -150,7 +150,7 @@ def test_et_look_level_2_v2(tmp_path):
     assert input_data.se_root.min().values >= 0.
     assert input_data.se_root.max().values <= 1.
 
-    ds = pywapor.et_look.main(input_data, et_look_version = "v2")
+    ds = pywapor_folder.et_look.main(input_data, et_look_version = "v2")
     assert ds.rio.crs.to_epsg() == 4326
     assert "aeti_24_mm" in ds.data_vars
     assert ds.aeti_24_mm.min().values >= 0.
@@ -166,7 +166,7 @@ def test_et_look_level_3_v2(tmp_path):
     lonlim = [30.7, 30.9]
     sources = "level_3"
     bin_length = "DEKAD"
-    input_data = pywapor.pre_et_look.main(folder, latlim, lonlim, timelim, sources, bin_length = bin_length)
+    input_data = pywapor_folder.pre_et_look.main(folder, latlim, lonlim, timelim, sources, bin_length = bin_length)
     assert input_data.rio.crs.to_epsg() == 4326
     assert np.all([x in input_data.data_vars for x in ["ndvi", "r0", "se_root"]])
     assert input_data.ndvi.min().values >= -1.
@@ -176,7 +176,7 @@ def test_et_look_level_3_v2(tmp_path):
     assert input_data.se_root.min().values >= 0.
     assert input_data.se_root.max().values <= 1.
 
-    ds = pywapor.et_look.main(input_data, et_look_version = "v2")
+    ds = pywapor_folder.et_look.main(input_data, et_look_version = "v2")
     assert ds.rio.crs.to_epsg() == 4326
     assert "aeti_24_mm" in ds.data_vars
     assert ds.aeti_24_mm.min().values >= 0.
@@ -193,12 +193,12 @@ def test_appending(tmp_path):
 
     sources = "level_1"
     
-    et_look_sources_lvl1 = pywapor.general.levels.pre_et_look_levels(level = sources, bin_length = "DEKAD")
+    et_look_sources_lvl1 = pywapor_folder.general.levels.pre_et_look_levels(level = sources, bin_length = "DEKAD")
     sources1 = {k: v for k,v in et_look_sources_lvl1.items() if v["products"][0]["source"] == "GEOS5" and k in ["t_air", "u2m"]}
-    ds1, _ = pywapor.collect.downloader.collect_sources(folder,sources1,latlim, lonlim, timelim)
+    ds1, _ = pywapor_folder.collect.downloader.collect_sources(folder,sources1,latlim, lonlim, timelim)
 
     sources2 = {k: v for k,v in et_look_sources_lvl1.items() if v["products"][0]["source"] == "GEOS5" and k in ["t_air", "qv", "v2m"]}
-    ds2, _ = pywapor.collect.downloader.collect_sources(folder,sources2,latlim, lonlim, timelim)
+    ds2, _ = pywapor_folder.collect.downloader.collect_sources(folder,sources2,latlim, lonlim, timelim)
 
     assert "qv" in xr.open_dataset(ds2[('GEOS5', 'inst3_2d_asm_Nx')]).data_vars
 

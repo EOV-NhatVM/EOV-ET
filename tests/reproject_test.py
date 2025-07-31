@@ -1,6 +1,6 @@
-from pywapor.general.processing_functions import create_dummy_ds
-from pywapor.general.reproject import reproject_bulk, reproject_chunk
-from pywapor.general.logger import adjust_logger
+from pywapor_folder.general.processing_functions import create_dummy_ds
+from pywapor_folder.general.reproject import reproject_bulk, reproject_chunk
+from pywapor_folder.general.logger import adjust_logger
 import glob
 import numpy as np
 import os

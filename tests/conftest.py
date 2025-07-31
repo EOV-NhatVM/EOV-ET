@@ -1,13 +1,13 @@
 import os
 from datetime import datetime
 import pytest
-import pywapor
+import pywapor_folder
 from sys import platform
 
 @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
 
-    folder = os.path.join(os.path.split(pywapor.__path__[0])[0], "tests", "results")
+    folder = os.path.join(os.path.split(pywapor_folder.__path__[0])[0], "tests", "results")
     
     if not os.path.exists(folder):
         os.makedirs(folder)

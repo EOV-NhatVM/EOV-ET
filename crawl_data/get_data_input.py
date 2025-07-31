@@ -269,7 +269,9 @@ def main():
     ee.Authenticate()
     ee.Initialize(project='ee-minhnhat8dc')
 
-    folder_ndvi = '/mnt/storage/code/pywapor-clms/dataset/ndvi/'
+    folder_ndvi = '/mnt/storage/code/pywapor-clms/dataset/dataset_TayNguyen/ndvi'
+    region = 'TayNguyen'
+    ROOT_OUTPUT = f'/mnt/storage/code/pywapor-clms/dataset/dataset_{region}'
     list_dates = get_list_date(folder_ndvi)
     ndvi_file = os.path.join(folder_ndvi, f"ndvi8days_infer_{list_dates[0]}.tif")
 
@@ -298,7 +300,7 @@ def main():
             "surface_net_solar_radiation_sum", "surface_solar_radiation_downwards_sum",
             "total_precipitation_sum"
         ])
-    out_era5 = "/mnt/storage/code/pywapor-clms/dataset/era5"
+    out_era5 = f"{ROOT_OUTPUT}/era5"
     os.makedirs(out_era5, exist_ok=True)
 
     images = era5_daily.toList(era5_daily.size())
@@ -321,7 +323,7 @@ def main():
 
     # ============================ ALBEDO DOWNLOAD ================================
     s2_albedo_ic = get_s2_albedo(start_date, end_date, region)
-    out_s2_albedo = "/mnt/storage/code/pywapor-clms/dataset/albedo_s2"
+    out_s2_albedo = f"{ROOT_OUTPUT}/albedo_s2"
     os.makedirs(out_s2_albedo, exist_ok=True)
 
     albedo_list = s2_albedo_ic.toList(s2_albedo_ic.size())
@@ -339,14 +341,14 @@ def main():
                 print(f"❌ Failed to download S2 Albedo for {date}")
 
     # =========================== DEM ============================================
-    out_dem_folder = "/mnt/storage/code/pywapor-clms/dataset/dem"
+    out_dem_folder = f"{ROOT_OUTPUT}/dem"
     os.makedirs(out_dem_folder, exist_ok=True)
     get_srtm_variables(region, out_dem_folder)
 
 
     # =========================== T_AMP ==========================================
     year = "2023"
-    output_folder = "/mnt/storage/code/pywapor-clms/dataset/t_amp"
+    output_folder = f"{ROOT_OUTPUT}/t_amp"
     os.makedirs(output_folder, exist_ok=True)
 
     # Lấy biên độ nhiệt độ năm

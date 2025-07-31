@@ -1,8 +1,8 @@
 import os
 import glob
 import requests
-from pywapor.general.logger import adjust_logger
-from pywapor.collect.protocol.crawler import _download_url, _download_urls, download_url, download_urls
+from pywapor_folder.general.logger import adjust_logger
+from pywapor_folder.collect.protocol.crawler import _download_url, _download_urls, download_url, download_urls
 
 def test_1(tmp_path):
 
